@@ -23,10 +23,10 @@ def prepend_bias(X):
 
 
 # 60000 images, each 785 elements (1 bias + 28 * 28 pixels)
-X_train = prepend_bias(load_images(r"C:/Users/91974/Documents/Datasets/MNISTbinary/mnistunzipped/train-images-idx3-ubyte.gz"))
+X_train = prepend_bias(load_images(r"/train-images-idx3-ubyte.gz"))
 
 # 10000 images, each 785 elements, with the same structure as X_train
-X_test = prepend_bias(load_images(r"C:\Users\91974\Documents\Datasets\MNISTbinary\mnistunzipped\t10k-images-idx3-ubyte.gz"))
+X_test = prepend_bias(load_images(r"/t10k-images-idx3-ubyte.gz"))
 
 
 def load_labels(filename):
@@ -51,10 +51,10 @@ def one_hot_encode(Y):
 
 
 # 60K labels, each a single digit from 0 to 9
-Y_train_unencoded = load_labels(r"C:\Users\91974\Documents\Datasets\MNISTbinary\mnistunzipped\train-labels-idx1-ubyte.gz")
+Y_train_unencoded = load_labels(r"/train-labels-idx1-ubyte.gz")
 
 # 60K labels, each consisting of 10 one-hot encoded elements
 Y_train = one_hot_encode(Y_train_unencoded)
 
 # 10000 labels, each a single digit from 0 to 9
-Y_test = load_labels(r"C:\Users\91974\Documents\Datasets\MNISTbinary\mnistunzipped\t10k-labels-idx1-ubyte.gz")
+Y_test = load_labels(r"/t10k-labels-idx1-ubyte.gz")
